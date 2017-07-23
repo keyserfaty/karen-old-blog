@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Escribiendo aplicaciones en vanilla js en ~2017"
+title:  "Haciendo aplicaciones en vanilla js en ~2017"
 date:   2017-23-07 11:49
 categories: vanilla-js
 ---

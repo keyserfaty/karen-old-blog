@@ -1,6 +1,7 @@
 body {
     margin: 0;
-    font-size: 14px;
+    font-size: 16px;
+    line-height: 26px;
     font-family: "Open Sans", sans-serif;
 }
 
@@ -92,6 +93,11 @@ section.content .me a:hover {
 }
 
 @media (min-width:1025px) {
+    body {
+        font-size: 14px;
+        line-height: 23px;
+    }
+
     section.content .titles, section.content .body {
         width: 760px;
         padding: 149px 100px 150px 70px;
