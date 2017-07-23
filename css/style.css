@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 2.25em;
+}
+
+section.content {
+    display: flex;
+    min-height: 100vh;
+}
+
+section.content .titles, section.content .body {
+    width: 760px;
+    padding: 149px 100px 0 70px;
+}
+
+section.content .body h1 {
+    margin-bottom: 83px;
+}
+
+section.content .titles h1 {
+    transition: transform 400ms ease;
+}
+
+section.content .titles h1 a {
+    cursor: pointer;
+    transition: text-shadow 300ms ease;
+}
+
+section.content .titles h1:hover {
+    transform: translateY(-5%);
+    text-shadow: #000 0 1px 0.5px;
+}
+
+section.content:after {
+    content: " ";
+    width: 60%;
+    background: #F8F8F8;
+}
+
+section.content:before {
+    content: " ";
+    width: 10px;
+    background: #2F4AFF;
+}
+
+section.content li {
+    margin-bottom: 15px;
+}
+
+section.content .me a {
+    position: absolute;
+    bottom: 52px;
+    left: 70px;
+}
+
+section.content .me a {
+    color: black;
+    transition:
+            color 300ms ease,
+            transform 500ms ease;
+}
+
+section.content .me a:hover {
+    color: #304BFF;
+    transform: translateY(-10%);
+}
