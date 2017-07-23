@@ -10,7 +10,6 @@ a {
 }
 
 ul {
-    list-style: none;
     padding: 0;
 }
 
@@ -61,6 +60,10 @@ section.content:before {
     content: " ";
     width: 10px;
     background: #2F4AFF;
+}
+
+section.content .titles ul {
+    list-style: none;
 }
 
 section.content li {
