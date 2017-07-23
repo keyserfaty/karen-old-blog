@@ -2,7 +2,9 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import {config} from 'config';
 
-import 'css/style.css';
+import 'css/style.css'
+import 'css/markdown-styles.css'
+import 'css/tomorrow.css'
 
 export default class extends React.Component {
   render() {

@@ -5,15 +5,17 @@ import CodePlugin from 'typography-plugin-code'
 import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
 
 const options = {
-  baseFontSize: '18px',
-  baseLineHeight: 1.45,
+  baseFontSize: '14px',
+  baseLineHeight: '20px',
   scaleRatio: 2.25,
   plugins: [new CodePlugin()],
   overrideStyles: ({ rhythm, scale }, options) => ({
     [MOBILE_MEDIA_QUERY]: {
       // Make baseFontSize on mobile 16px.
       html: {
+        fontFamily: "'Open Sans', sans-serif",
         fontSize: `${16 / 16 * 100}%`,
+        color: 'black'
       },
     },
   }),
