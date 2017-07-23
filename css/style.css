@@ -29,8 +29,8 @@ section.content {
 }
 
 section.content .titles, section.content .body {
-     min-width: 400px;
-     max-width: 720px;
+    min-width: 400px;
+    max-width: 720px;
     padding: 100px 30px 164px 30px;
 }
 
@@ -67,6 +67,7 @@ section.content:before {
 
 section.content .titles ul {
     list-style: none;
+    margin: 0;
 }
 
 section.content li {
@@ -76,14 +77,14 @@ section.content li {
 section.content .me a {
     position: absolute;
     bottom: 52px;
-    left: 70px;
+    left: 40px;
 }
 
 section.content .me a {
     color: black;
     transition:
-            color 300ms ease,
-            transform 500ms ease;
+        color 300ms ease,
+        transform 500ms ease;
 }
 
 section.content .me a:hover {
