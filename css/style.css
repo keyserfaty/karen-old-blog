@@ -29,10 +29,9 @@ section.content {
 }
 
 section.content .titles, section.content .body {
-    /*width: 760px;*/
-    /*padding: 149px 100px 150px 70px;*/
-    width: 500px;
-    padding: 100px 119px 164px 30px;
+     min-width: 400px;
+     max-width: 720px;
+    padding: 100px 30px 164px 30px;
 }
 
 section.content .body h1 {
