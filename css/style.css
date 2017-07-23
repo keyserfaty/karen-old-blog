@@ -29,7 +29,7 @@ section.content {
 
 section.content .titles, section.content .body {
     width: 760px;
-    padding: 149px 100px 0 70px;
+    padding: 149px 100px 150px 70px;
 }
 
 section.content .body h1 {

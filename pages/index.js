@@ -17,7 +17,7 @@ export default class Index extends React.Component {
           </ul>
         </div>
         <div className="me">
-          <a href="#">@keyserfaty</a>
+          <a href="https://twitter.com/keyserfaty">@keyserfaty</a>
         </div>
       </span>
       );

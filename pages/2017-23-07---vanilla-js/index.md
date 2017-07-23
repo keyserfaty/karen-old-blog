@@ -180,7 +180,7 @@ const nextImage = Node('img', {
 })
 ```
 
-Seguramente después de ver eso estarán pensando lo mismo que @okbel cuando vio esa función y me dijo: ‘a esa función le falta un `children` para ser igual a `CreateElement`!’. Naturalmente yo no me había dado cuenta de ya existía una implementación de lo que acabo de mostrar. Una versión posterior que soporta `children` y eventos :) se ve así:
+Seguramente después de ver eso estarán pensando lo mismo que [@okbel](https://twitter.com/okbel) cuando vio esa función y me dijo: ‘a esa función le falta un `children` para ser igual a `CreateElement`!’. Naturalmente yo no me había dado cuenta de ya existía una implementación de lo que acabo de mostrar. Una versión posterior que soporta `children` y eventos :) se ve así:
 
 ``` js
 const EVENTS = {
