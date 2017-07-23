@@ -28,8 +28,10 @@ section.content {
 }
 
 section.content .titles, section.content .body {
-    width: 760px;
-    padding: 149px 100px 150px 70px;
+    /*width: 760px;*/
+    /*padding: 149px 100px 150px 70px;*/
+    width: 500px;
+    padding: 100px 119px 164px 30px;
 }
 
 section.content .body h1 {
@@ -59,6 +61,7 @@ section.content:after {
 section.content:before {
     content: " ";
     width: 10px;
+    min-width: 10px;
     background: #2F4AFF;
 }
 
@@ -86,4 +89,11 @@ section.content .me a {
 section.content .me a:hover {
     color: #304BFF;
     transform: translateY(-10%);
+}
+
+@media (min-width:1025px) {
+    section.content .titles, section.content .body {
+        width: 760px;
+        padding: 149px 100px 150px 70px;
+    }
 }

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+ <html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title data-react-helmet="true">⚡️ | Escribiendo aplicaciones en vanilla js en ~2017</title><meta data-react-helmet="true" name="description" content="Blog de Karen Serfaty"/><meta data-react-helmet="true" name="keywords" content="javascript, elm, programming"/><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:87.5%/1.64286em georgia,serif;box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.8);font-family:georgia,serif;font-weight:normal;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.64286rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.64286rem;color:inherit;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:2.25rem;line-height:3.28571rem;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.64286rem;color:inherit;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.62671rem;line-height:2.46429rem;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.64286rem;color:inherit;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.38316rem;line-height:2.46429rem;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.64286rem;color:inherit;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.64286rem;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.64286rem;color:inherit;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.85028rem;line-height:1.64286rem;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.64286rem;color:inherit;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.78405rem;line-height:1.64286rem;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.64286rem;}ul{margin-left:1.64286rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.64286rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.64286rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.64286rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.64286rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.64286rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.64286rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.64286rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.64286rem;font-size:0.85rem;line-height:1.42;background:hsla(0,0%,0%,0.04);border-radius:3px;overflow:auto;word-wrap:normal;padding:1.64286rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.64286rem;font-size:1rem;line-height:1.64286rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.64286rem;}blockquote{margin-left:1.64286rem;margin-right:1.64286rem;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.64286rem;}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.64286rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.64286rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.64286rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.64286rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.64286rem;}b{font-weight:bold;}strong{font-weight:bold;}dt{font-weight:bold;}th{font-weight:bold;}li{margin-bottom:calc(1.64286rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.64286rem;margin-bottom:calc(1.64286rem / 2);margin-top:calc(1.64286rem / 2);}li > ul{margin-left:1.64286rem;margin-bottom:calc(1.64286rem / 2);margin-top:calc(1.64286rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(1.64286rem / 2);}code{font-size:0.85rem;line-height:1.64286rem;}kbd{font-size:0.85rem;line-height:1.64286rem;}samp{font-size:0.85rem;line-height:1.64286rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:tnum;-moz-font-feature-settings:tnum;-ms-font-feature-settings:tnum;-webkit-font-feature-settings:tnum;padding-left:1.09524rem;padding-right:1.09524rem;padding-top:0.82143rem;padding-bottom:calc(0.82143rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}tt,code{background-color:hsla(0,0%,0%,0.04);border-radius:3px;font-family:"SFMono-Regular", Consolas,"Roboto Mono","Droid Sans Mono","Liberation Mono",Menlo,Courier,monospace;padding:0;padding-top:0.2em;padding-bottom:0.2em;}pre code{background:none;line-height:1.42;}code:before,code:after,tt:before,tt:after{letter-spacing:-0.2em;content:" ";}pre code:before,pre code:after,pre tt:before,pre tt:after{content:"";}@media only screen and (max-width:480px){html{font-family:'Open Sans', sans-serif;font-size:100%;color:black;}}</style><style>body{margin:0;font-size:14px;font-family:Open Sans,sans-serif}a{text-decoration:none;color:#000}ul{padding:0}h1{margin:0;font-weight:700;font-size:2.25em}section.content{display:-webkit-box;display:-ms-flexbox;display:flex;min-height:100vh}section.content .body,section.content .titles{width:760px;padding:149px 100px 150px 70px}section.content .body h1{margin-bottom:83px}section.content .titles h1{-webkit-transition:-webkit-transform .4s ease;transition:-webkit-transform .4s ease;transition:transform .4s ease;transition:transform .4s ease,-webkit-transform .4s ease}section.content .titles h1 a{cursor:pointer;-webkit-transition:text-shadow .3s ease;transition:text-shadow .3s ease}section.content .titles h1:hover{-webkit-transform:translateY(-5%);transform:translateY(-5%);text-shadow:#000 0 1px .5px}section.content:after{content:" ";width:60%;background:#f8f8f8}section.content:before{content:" ";width:10px;background:#2f4aff}section.content .titles ul{list-style:none}section.content li{margin-bottom:15px}section.content .me a{position:absolute;bottom:52px;left:70px;color:#000;-webkit-transition:color .3s ease,-webkit-transform .5s ease;transition:color .3s ease,-webkit-transform .5s ease;transition:color .3s ease,transform .5s ease;transition:color .3s ease,transform .5s ease,-webkit-transform .5s ease}section.content .me a:hover{color:#304bff;-webkit-transform:translateY(-10%);transform:translateY(-10%)}.warning{color:#9f6000;background-color:#feefb3;padding:18px}.warning:before{content:"\26A0";margin-right:9px}.rfc-page pre{font-family:inherit}.hljs-comment,.hljs-quote{color:#998;font-style:italic}.hljs-keyword,.hljs-selector-tag,.hljs-subst{color:#333;font-weight:700}.hljs-literal,.hljs-number,.hljs-tag .hljs-attr,.hljs-template-variable,.hljs-variable{color:teal}.hljs-doctag,.hljs-string{color:#d14}.hljs-section,.hljs-selector-id,.hljs-title{color:#900;font-weight:700}.hljs-subst{font-weight:400}.hljs-class .hljs-title,.hljs-type{color:#458;font-weight:700}.hljs-attribute,.hljs-name,.hljs-tag{color:navy;font-weight:400}.hljs-link,.hljs-regexp{color:#009926}.hljs-bullet,.hljs-symbol{color:#990073}.hljs-built_in,.hljs-builtin-name{color:#0086b3}.hljs-meta{color:#999;font-weight:700}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}.hljs-comment,.hljs-quote{color:#8e908c}.hljs-deletion,.hljs-name,.hljs-regexp,.hljs-selector-class,.hljs-selector-id,.hljs-tag,.hljs-template-variable,.hljs-variable{color:#c82829}.hljs-built_in,.hljs-builtin-name,.hljs-link,.hljs-literal,.hljs-meta,.hljs-number,.hljs-params,.hljs-type{color:#f5871f}.hljs-attribute{color:#eab700}.hljs-addition,.hljs-bullet,.hljs-string,.hljs-symbol{color:#718c00}.hljs-section,.hljs-title{color:#4271ae}.hljs-keyword,.hljs-selector-tag{color:#8959a8}.hljs{display:block;overflow-x:auto;background:#fff;color:#4d4d4c;padding:.5em}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}</style></head><body><div id="react-mount"><div data-reactroot="" data-reactid="1" data-react-checksum="-1185138270"><!-- react-empty: 2 --><section class="content" data-reactid="3"><div class="body" data-reactid="4"><!-- react-empty: 5 --><h1 data-reactid="6">Escribiendo aplicaciones en vanilla js en ~2017</h1><div class="content" data-reactid="7"><p>Durante algunos fines de semana estuve trabajando en una app que levanta imágenes random de una API y te las muestra en el browser. Después el usuario usando la barra espaciadora puede navegar entre una y otra foto. Al empezar esta aplicación decidí no usar ningún framework por una serie de razones:</p>
+<ul>
+<li>Iba a querer hacer optimizaciones, como pre-cargar las imágenes.</li>
+<li>Iba a querer poner animaciones entre que el usuario pasa de una imagen a la siguiente.</li>
+<li>Es un side-project y por definición en los side projects hay que hacer todo de cero y perder muchísimo tiempo.</li>
+</ul>
+<p>Por las dos primeras razones pensé en que hacer el proyecto con React me iba a complicar las cosas en vez de facilitármelas. Así que lo empecé a hacer con vanilla js (ES6, para usar algunas features lindas como el <code>spead operator</code>).</p>
+<h3>State + Eventos + DOM</h3>
+<p>En mi humilde opinión una aplicación web consiste en tres cosas: un <em>estado</em>, una <em>serie de eventos</em> y el <em>DOM</em>. El estado sería todo lo que hay en la aplicación en un momento determinado (toda la data, por un lado: la que viene de API o la que genera el usuario; y el estado en que se encuentra la UI: menú abierto o cerrado, por ejemplo). El estado sería este objeto enorme que nos cuenta todo lo que sabemos sobre la aplicación en ese momento dado.</p>
+<p>Los eventos, entonces, serían las acciones que hacen que ese estado vaya mutando. Un evento puede ser, por ejemplo, el click del usuario en el menú para abrirlo. Eso produciría un cambio en nuestro <code>state</code>:</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> state = {
+    <span class="hljs-attr">menuOpen</span>: <span class="hljs-literal">false</span>
+}
+
+<span class="hljs-keyword">const</span> Menu = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> &lt;Menu onClick={toggleMenu} /&gt;
+
+<span class="hljs-comment">/** -&gt; Después de que el usuario clickea el menu el state cambia
+* const state = {
+*       menuOpen: true
+* }
+*/</span>
+
+</code></pre>
+<p>Los eventos también pueden no ser producidos por los usuarios. Por ejemplo cuando /dispatcheamos/ una acción para traer data de una API. Eso también va a modificar nuestro estado.</p>
+<p>Por último el DOM sería cómo se ve todo esto en la UI. En última instancia esto va a ser HTML en nuestro sitio pero si estamos construyendo los componentes desde Javascript primero entonces el DOM van a ser, momentáneamente, estos componentes.</p>
+<p>Con todo esto en mente es que empecé a armar el esqueleto de mi aplicación. La primera cosa que contruí, entonces, fue un objeto de estado y algunas funciones para hacerlo ir cambiando de forma.</p>
+<h3>Construyendo el <code>state</code> y sus mutaciones</h3>
+<p>El /state/ de mi aplicación solo tiene dos cosas: una lista de items y el id de la imagen que el usuario está viendo en ese momento:</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> initialState = {
+  <span class="hljs-attr">list</span>: [],
+  <span class="hljs-attr">currentImage</span>: <span class="hljs-number">0</span>
+}
+
+</code></pre>
+<p>Ahora que tengo el /state/ lo que necesito es una forma de que ese state vaya cambiando, es decir, que cuando /fetchee/ imágenes esas imágenes se guarden en la lista, por ejemplo. Para esto, indescaradamente, robé la idea de Redux de tener un /store/ que reciba acciones y vaya provocando cambios en el state de acuerdo a esas acciones.</p>
+<p>Esta es mi mini implementación del store de Redux:</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> createStore = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createStoreFn</span> (<span class="hljs-params">reducer</span>) </span>{
+  <span class="hljs-keyword">let</span> state = <span class="hljs-literal">undefined</span>
+  <span class="hljs-keyword">let</span> subscribers = []
+
+  <span class="hljs-keyword">return</span> {
+    <span class="hljs-attr">dispatch</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">action</span>) </span>{
+      state = reducer(state, action)
+      subscribers.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">handle</span>) </span>{
+        <span class="hljs-keyword">return</span> handle(state, action)
+      })
+    },
+    <span class="hljs-attr">getState</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">return</span> state
+    },
+    <span class="hljs-attr">subscribe</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">handler</span>) </span>{
+      subscribers.push(handler)
+    }
+  }
+}
+</code></pre>
+<p>Esta función funciona de la siguiente manera: recibe un reducer y devuelve una función <code>dispatch</code>, que se encarga de hacer cambios en el state; una función <code>getState</code> que devuelve el state en ese momento del tiempo y una función <code>subscribe</code> que se dispara cada vez que hay un cambio en el /state/. Solo con eso ya puedo armar mi estructura base de la aplicación.</p>
+<p>Para poder usar esta función necesito crear un reducer. La función de mi reducer, para quienes nunca hayan usado Redux, es recibir una serie de acciones y hacer cambios en el state en base a esas acciones. Mi reducer ser ve más o menos así:</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> reducer = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">reducerFn</span> (<span class="hljs-params">state = initialState, action</span>) </span>{
+  <span class="hljs-keyword">switch</span> (action.type) {
+    <span class="hljs-keyword">case</span> <span class="hljs-string">'FETCH_ALL_IMAGES_SUCCESS'</span>: {
+      <span class="hljs-keyword">return</span> {
+        <span class="hljs-attr">list</span>: [
+            ...state.list,
+            ...action.payload.list,
+        ]
+      }
+    }
+
+    <span class="hljs-keyword">case</span> <span class="hljs-string">'ON_NEXT_IMAGE'</span>: {
+      <span class="hljs-keyword">return</span> {
+        <span class="hljs-attr">currentImage</span>: action.payload.nextImage,
+      }
+    }
+
+    <span class="hljs-keyword">default</span>:
+      <span class="hljs-keyword">return</span> state
+  }
+}
+</code></pre>
+<p>Y para crear el store:</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> store = createStore(reducer)
+</code></pre>
+<h3>Escuchando los eventos y haciendo cambios en el <code>state</code></h3>
+<p>En el reducer anterior escuchamos dos acciones: <code>FETCH_ALL_IMAGES_SUCCESS</code> y  <code>ON_NEXT_IMAGE</code>. La primera se va a disparar cuando la página terminó de cargarse y la segunda se va a disparar cuando el usuario presiona la barra espaciadora. Esos son mis dos eventos. Me voy a concentrar solo en el primer evento para explicar a modo de ejemplo lo que hice.</p>
+<p>Las acciones que tienen que suceder me las imagino de la siguiente forma:</p>
+<ol>
+<li>La página termina de cargar. Eso dispara una acción <code>FETCH_ALL_IMAGES</code></li>
+<li>La acción <code>FETCH_ALL_IMAGES</code> va a hacer la llamada async a mi API y va a traer una lista de imágenes. Cuando termine satisfactoriamente se va a despachar una acción que se llame <code>FETCH_ALL_IMAGES_SUCCESS</code>. Si por alguna razón falla esa acción va a ser <code>FETCH_ALL_IMAGES_FAILURE</code>.</li>
+<li><code>FETCH_ALL_IMAGES_SUCCESS</code> va a recibir una lista de imágenes y va a /updatear/ mi array vacío con esa lista de imágenes.</li>
+</ol>
+<p>Para la primera acción (<code>ON_WINDOW_LOAD</code>) voy a hacer lo siguiente:</p>
+<pre><code class="language-js"><span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">'load'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  store.dispatch({
+    <span class="hljs-attr">type</span>: <span class="hljs-string">'FETCH_ALL_IMAGES'</span>
+  })
+})
+</code></pre>
+<p>Esto va a disparar esa acción cuando el browser termina de cargar. Después de eso voy a escuchar esa acción para disparar mi acción asincrónica (la que trae las imágenes). Para hacer eso necesito escuchar los cambios en el store. Voy a usar mi función <code>subscribe</code>:</p>
+<pre><code class="language-js">store.subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">state, action</span>) </span>{
+  <span class="hljs-keyword">switch</span> (action.type) {
+    <span class="hljs-keyword">case</span> <span class="hljs-string">'FETCH_ALL_IMAGES'</span>: {
+      <span class="hljs-keyword">var</span> xml = <span class="hljs-keyword">new</span> XMLHttpRequest();
+
+      xml.addEventListener(<span class="hljs-string">'load'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+          store.dispatch({
+            <span class="hljs-attr">type</span>: <span class="hljs-string">'FETCH_ALL_IMAGES_SUCCESS'</span>,
+            <span class="hljs-attr">payload</span>: {
+              <span class="hljs-attr">list</span>: <span class="hljs-built_in">JSON</span>.parse(<span class="hljs-keyword">this</span>.responseText)
+            }
+          })
+        }
+      );
+      xml.open(<span class="hljs-string">'GET'</span>, url + clientId);
+      xml.send();
+
+      <span class="hljs-keyword">break</span>
+    }
+  }
+})
+</code></pre>
+<h3>Haciendo cambios en el DOM</h3>
+<p>Por último me gustaría mostrar estas imágenes en el DOM. Como muchos sabrán usar la API de <code>document</code>para crear nodos en el DOM puede ser un poco engorroso a veces. Así que armé esta pequeña función:</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> Node = <span class="hljs-function">(<span class="hljs-params">elem, attrs</span>) =&gt;</span> {
+  <span class="hljs-keyword">const</span> node = d.createElement(elem)
+  <span class="hljs-built_in">Object</span>.keys(attrs).forEach(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">key</span>) </span>{
+    node.setAttribute(key, attrs[key])
+  })
+
+  <span class="hljs-keyword">return</span> node
+}
+</code></pre>
+<p>Esta función me permite crear nodos especificando como primer parámetro la etiqueta html y como segundo parámetro un objeto de atributos:</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> nextImage = Node(<span class="hljs-string">'img'</span>, {
+  <span class="hljs-attr">id</span>: nextId,
+  <span class="hljs-attr">src</span>: list[nextId].urls.small,
+  <span class="hljs-attr">style</span>: <span class="hljs-string">'width: 100%; display: none'</span>
+})
+</code></pre>
+<p>Seguramente después de ver eso estarán pensando lo mismo que <a href="https://twitter.com/okbel">@okbel</a> cuando vio esa función y me dijo: ‘a esa función le falta un <code>children</code> para ser igual a <code>CreateElement</code>!’. Naturalmente yo no me había dado cuenta de ya existía una implementación de lo que acabo de mostrar. Una versión posterior que soporta <code>children</code> y eventos :) se ve así:</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> EVENTS = {
+  <span class="hljs-attr">onClick</span>: <span class="hljs-string">'click'</span>,
+  <span class="hljs-attr">onKeyUp</span>: <span class="hljs-string">'keyup'</span>,
+  <span class="hljs-attr">onLoad</span>: <span class="hljs-string">'load'</span>,
+  <span class="hljs-attr">onFocus</span>: <span class="hljs-string">'focus'</span>,
+  <span class="hljs-attr">onBlur</span>: <span class="hljs-string">'blur'</span>
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> Node = <span class="hljs-function">(<span class="hljs-params">elem, attrs, ...children</span>) =&gt;</span> {
+  <span class="hljs-keyword">let</span> node = d.createElement(elem)
+
+  <span class="hljs-keyword">if</span> (attrs != <span class="hljs-literal">null</span>) {
+    <span class="hljs-built_in">Object</span>.keys(attrs).forEach(<span class="hljs-function"><span class="hljs-params">key</span> =&gt;</span> {
+      <span class="hljs-keyword">if</span> (EVENTS.hasOwnProperty(key)) {
+        node.addEventListener(EVENTS[key], attrs[key])
+      } <span class="hljs-keyword">else</span> {
+        node.setAttribute(key, attrs[key])
+      }
+    })
+  }
+
+  <span class="hljs-keyword">if</span> (children.length &gt; <span class="hljs-number">0</span>) {
+    children.forEach(<span class="hljs-function"><span class="hljs-params">child</span> =&gt;</span> {
+      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> child === <span class="hljs-string">'string'</span>) {
+        node.innerHTML = child
+      }
+
+      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> child === <span class="hljs-string">'object'</span>) {
+        node.appendChild(child)
+      }
+    })
+  }
+
+  <span class="hljs-keyword">return</span> node
+}
+
+</code></pre>
+<p>Que en uso en un <code>SearchBox</code> para las imágenes se ve así:</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> SearchBoxMain = <span class="hljs-function"><span class="hljs-params">props</span> =&gt;</span> {
+  <span class="hljs-keyword">const</span> { dispatch } = props
+
+  <span class="hljs-keyword">const</span> onKeyupInput = <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
+    <span class="hljs-keyword">if</span> (e.keyCode === <span class="hljs-number">13</span>) {
+      dispatch({
+        <span class="hljs-attr">type</span>: <span class="hljs-string">'ON_INPUT_ENTER_KEY_DOWN'</span>,
+        <span class="hljs-attr">payload</span>: {
+          <span class="hljs-attr">searchValue</span>: e.target.value,
+          <span class="hljs-attr">path</span>: <span class="hljs-string">'/search'</span>
+        }
+      })
+    }
+  }
+
+  <span class="hljs-keyword">return</span> (
+    Node(<span class="hljs-string">'div'</span>, { <span class="hljs-attr">id</span>: <span class="hljs-string">'search'</span> },
+      Node(<span class="hljs-string">'div'</span>, { <span class="hljs-attr">class</span>: <span class="hljs-string">'search-box'</span>, <span class="hljs-attr">onKeyUp</span>: onKeyupInput },
+        Node(<span class="hljs-string">'div'</span>, { <span class="hljs-attr">class</span>: <span class="hljs-string">'icon'</span> }),
+        Node(<span class="hljs-string">'input'</span>, { <span class="hljs-attr">type</span>: <span class="hljs-string">'text'</span>, <span class="hljs-attr">placeholder</span>: <span class="hljs-string">'Search photos'</span>, <span class="hljs-attr">autofocus</span>: <span class="hljs-literal">true</span> }))
+    )
+  )
+}
+</code></pre>
+<h3>Resumiendo</h3>
+<p>No mostré toda mi implementación pero sí algunas ideas generales que espero que puedan servirle a alguien más. En resumen, si mantenemos nuestro state, nuestros eventos y nuestros componentes relativamente aislados unos de otros podemos hacer aplicaciones en vanilla js sin ningún framework de forma relativamente escable y fácil de seguir.</p>
+<p>Después de usar este patrón con una aplicación más grande llegué a algunas conclusiones y encontré algunas formas menos imperativas de resolver algunos problemas. También pude ver las limitaciones de Javascript en algunos sentidos y empecé a pensar en usar otros lenguajes (jm jm, Elm) para hacer esto mismo de forma más eficiente.</p>
+<p>Mis próximos posteos van a ser sobre cómo migrar de una estructura como esta a Elm, que sigue convenciones muy (muy) parecidas pero que tiene algunas magias para resolver algunos problemas (<a href="https://guide.elm-lang.org/types/union_types.html">union types</a>).</p>
+</div></div></section></div></div><script src="/bundle.js?t=1500822115945"></script></body></html>

@@ -6,7 +6,7 @@ import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
 
 const options = {
   baseFontSize: '14px',
-  baseLineHeight: '20px',
+  baseLineHeight: '23px',
   scaleRatio: 2.25,
   plugins: [new CodePlugin()],
   overrideStyles: ({ rhythm, scale }, options) => ({
