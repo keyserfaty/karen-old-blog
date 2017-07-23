@@ -102,4 +102,8 @@ section.content .me a:hover {
         width: 760px;
         padding: 149px 100px 150px 70px;
     }
+
+    section.content .me a {
+        left: 80px;
+    }
 }
