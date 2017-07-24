@@ -3,7 +3,7 @@ import {Link} from 'react-router';
 import {config} from 'config';
 
 export default class Index extends React.Component {
-  render() {
+  render () {
     const posts = this.props.route.pages.filter(post => !!post.data.title);
     return (
       <span>
@@ -15,15 +15,17 @@ export default class Index extends React.Component {
               </li>
             ))}
           </ul>
-          <div className="subscribe">
-            <button><a href="http://eepurl.com/cW6ay1" target="_blank">Suscribite</a></button>
-          </div>
-        </div>
-        <div className="me">
-          <a href="https://twitter.com/keyserfaty" target="_blank">@keyserfaty</a>
+          <footer>
+            <div className="me">
+              <a href="https://twitter.com/keyserfaty" target="_blank">@keyserfaty</a>
+            </div>
+            <div className="subscribe">
+              <button><a href="http://eepurl.com/cW6ay1" target="_blank">Suscribite</a></button>
+            </div>
+          </footer>
         </div>
       </span>
-      );
+    );
 
   }
 }

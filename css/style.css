@@ -32,6 +32,8 @@ section.content .titles, section.content .body {
     min-width: 400px;
     max-width: 720px;
     padding: 100px 30px 164px 30px;
+    min-height: 100vh;
+    position: relative;
 }
 
 section.content .body h1 {
@@ -138,10 +140,10 @@ section.content .subscribe button:hover {
         width: 760px;
         padding: 149px 100px 150px 70px;
         position: relative;
-        height: 100vh;
+        min-height: 100vh;
     }
 
     section.content .me a {
-        left: 80px;
+        left: 70px;
     }
 }
