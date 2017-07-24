@@ -92,6 +92,42 @@ section.content .me a:hover {
     transform: translateY(-10%);
 }
 
+section.content .subscribe {
+    position: absolute;
+    right: 140px;
+    bottom: 86px;
+}
+
+section.content .subscribe button {
+    background: #2f4aff;
+    border: 0;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 25px;
+    position: absolute;
+}
+
+section.content .subscribe button a {
+    color: white;
+}
+
+section.content .subscribe button {
+    transform: translateY(0);
+    transition: transform 100ms ease, box-shadow 100ms ease;
+    box-shadow: 0px 3px 20px #adadad;
+}
+
+section.content .subscribe button:focus {
+    outline: none;
+}
+
+section.content .subscribe button:hover {
+    box-shadow: 0px 3px 40px #adadad;
+    transform: translateY(-5%);
+}
+
+
 @media (min-width:1025px) {
     body {
         font-size: 14px;
@@ -101,6 +137,8 @@ section.content .me a:hover {
     section.content .titles, section.content .body {
         width: 760px;
         padding: 149px 100px 150px 70px;
+        position: relative;
+        height: 100vh;
     }
 
     section.content .me a {
